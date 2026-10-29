@@ -9,7 +9,7 @@
     <header class="time-day-header">
         <div class="time-day-heading" data-time-day-date-display>
             <h2>@Model.Day.Date.ToString("dd/MM/yy", CultureInfo.InvariantCulture)</h2>
-            <span class="time-day-total">@Localizer["Time_Total"]: @Model.Day.TotalTimeSpent</span>
+            <span class="time-day-total @(Model.Day.IsTotalOutsideOneDay ? "is-outside-one-day" : "")">@Localizer["Time_Total"]: @Model.Day.TotalTimeSpent</span>
         </div>
 
         <form method="post"

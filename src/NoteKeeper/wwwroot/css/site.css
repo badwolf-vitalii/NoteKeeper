@@ -1325,6 +1325,21 @@ html[data-theme="light"] .time-day-date-edit-form .time-date-control > input[typ
     font-weight: 700;
 }
 
+.time-day-total.is-outside-one-day {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 8px;
+    border-radius: 7px;
+    background: rgba(255, 102, 125, 0.13);
+    color: #ff9bab;
+    font-weight: 800;
+}
+
+html[data-theme="light"] .time-day-total.is-outside-one-day {
+    background: rgba(185, 32, 58, 0.09);
+    color: #b4233d;
+}
+
 .time-entry-list {
     display: grid;
 }

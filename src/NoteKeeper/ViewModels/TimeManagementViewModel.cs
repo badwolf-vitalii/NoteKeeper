@@ -49,6 +49,7 @@ public sealed class TimeManagementDayViewModel
     public int Id { get; set; }
     public DateTime Date { get; set; }
     public string TotalTimeSpent { get; set; } = string.Empty;
+    public bool IsTotalOutsideOneDay { get; set; }
     public List<TimeManagementEntryViewModel> Entries { get; set; } = [];
 }
 
