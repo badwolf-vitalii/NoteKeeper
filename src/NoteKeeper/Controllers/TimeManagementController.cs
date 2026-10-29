@@ -883,12 +883,16 @@ public sealed class TimeManagementController(
     private static TimeManagementDayViewModel MapDay(
         TimeManagementDay day)
     {
+        var totalTimeSpentMinutes = day.Entries.Sum(
+            entry => entry.TimeSpentMinutes);
+
         return new TimeManagementDayViewModel
         {
             Id = day.Id,
             Date = day.Date,
-            TotalTimeSpent = JiraDuration.Format(
-                day.Entries.Sum(entry => entry.TimeSpentMinutes)),
+            TotalTimeSpent = JiraDuration.Format(totalTimeSpentMinutes),
+            IsTotalOutsideOneDay =
+                totalTimeSpentMinutes != JiraDuration.MinutesPerDay,
             Entries = day.Entries
                 .OrderBy(entry => entry.Id)
                 .Select(entry => new TimeManagementEntryViewModel
